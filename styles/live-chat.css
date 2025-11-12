@@ -1,0 +1,106 @@
+/* Hide HubSpot's chat button on the right side - keep only the left one */
+.IconLauncher__BaseLauncher-fiVgfM {
+  position: fixed !important;
+}
+
+/* Hide chat button if it's positioned on the right side */
+.IconLauncher__BaseLauncher-fiVgfM[style*="right"],
+button[aria-label="Open live chat"][style*="right"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Alternative: Hide by checking computed style */
+@media (min-width: 769px) {
+  .IconLauncher__BaseLauncher-fiVgfM {
+    /* Check if right position */
+  }
+}
+
+.IconLauncher__ShapedLauncher-gZzRBO {
+  border-radius: 50% !important;
+}
+
+.jrgLYt {
+  /* Additional styling class */
+}
+
+.reagan--widget-loaded {
+  /* Widget loaded state */
+}
+
+.IconLauncher__LauncherIcon-eqBHFy {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+}
+
+.dhXRwb {
+  /* Icon wrapper */
+}
+
+.TwistFadeTransition__TransitionComponent-hXIVqG {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.TwistFadeTransition__TransitionComponent-hXIVqG[direction='left'] {
+  opacity: 1 !important;
+  transform: rotate(0deg) !important;
+}
+
+.TwistFadeTransition__TransitionComponent-hXIVqG[direction='right'] {
+  opacity: 1 !important;
+  transform: rotate(0deg) !important;
+}
+
+.iRVkwX {
+  /* Open state */
+}
+
+.dJcSNz {
+  /* Closed state */
+}
+
+.VizExIcon__IconWrapper-iRZCFt {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.fzWkmv {
+  /* Icon wrapper variant */
+}
+
+.conversations-visitor-close-icon {
+  width: 20px !important;
+  height: 20px !important;
+  display: block !important;
+}
+
+.conversations-visitor-close-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .IconLauncher__BaseLauncher-fiVgfM.reagan--widget-loaded {
+    bottom: 15px !important;
+    right: 15px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
