@@ -257,7 +257,14 @@ export default function Header() {
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-124">
                   <a href="#" className="elementor-item elementor-item-anchor">
-                    Services <span className="dropdown-arrow">▼</span>
+                    Services
+                    <svg
+                      className="dropdown-arrow"
+                      viewBox="0 0 12 8"
+                      aria-hidden="true"
+                    >
+                      <polyline points="1 1 6 6 11 1" />
+                    </svg>
                   </a>
                   <ul className="sub-menu elementor-nav-menu--dropdown">
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-989">
@@ -421,7 +428,14 @@ export default function Header() {
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-124">
                   <a href="#" className="elementor-item elementor-item-anchor">
-                    Services <span className="dropdown-arrow">▼</span>
+                    Services
+                    <svg
+                      className="dropdown-arrow"
+                      viewBox="0 0 12 8"
+                      aria-hidden="true"
+                    >
+                      <polyline points="1 1 6 6 11 1" />
+                    </svg>
                   </a>
                   <ul className="sub-menu elementor-nav-menu--dropdown">
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-989">

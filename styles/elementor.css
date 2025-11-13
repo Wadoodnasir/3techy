@@ -201,11 +201,20 @@
 
 /* Dropdown arrow for Services */
 .elementor-nav-menu .menu-item-has-children .dropdown-arrow {
-  font-size: 0.7em;
-  margin-left: 5px;
+  width: 0.5em;
+  height: 0.4em;
+  margin-left: 6px;
   display: inline-block;
   transition: transform 0.3s;
   vertical-align: middle;
+}
+
+.elementor-nav-menu .menu-item-has-children .dropdown-arrow polyline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .elementor-nav-menu .menu-item-has-children:hover .dropdown-arrow {
