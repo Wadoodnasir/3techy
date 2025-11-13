@@ -11,6 +11,7 @@ export default function Header() {
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
   const isAboutPage = pathname === "/about";
+  const isProjectsPage = pathname === "/projects";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -345,13 +346,13 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-                <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-125">
-                  <a
-                    href="https://xyz.com/projects/"
-                    className="elementor-item"
+                <li className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-125 ${isProjectsPage ? "current-menu-item" : ""}`}>
+                  <Link
+                    href="/projects"
+                    className={`elementor-item ${isProjectsPage ? "elementor-item-active" : ""}`}
                   >
                     Portfolio
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863">
                   <a href="https://xyz.com/reviews/" className="elementor-item">
@@ -516,13 +517,13 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-                <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-125">
-                  <a
-                    href="https://xyz.com/projects/"
-                    className="elementor-item"
+                <li className={`menu-item menu-item-type-custom menu-item-object-custom menu-item-125 ${isProjectsPage ? "current-menu-item" : ""}`}>
+                  <Link
+                    href="/projects"
+                    className={`elementor-item ${isProjectsPage ? "elementor-item-active" : ""}`}
                   >
                     Portfolio
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863">
                   <a href="https://xyz.com/reviews/" className="elementor-item">

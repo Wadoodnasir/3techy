@@ -73,6 +73,9 @@ export default function RootLayout({
         <link rel="stylesheet" href="/css/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css" />
         <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-posts.min.css" />
         <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-call-to-action.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/uploads/elementor/css/post-1234.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-loop-builder.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-theme-elements.min.css" />
       </head>
       <body className="home wp-singular page-template page-template-elementor_header_footer page page-id-2745 wp-custom-logo wp-theme-hello-elementor wp-child-theme-hello-theme-child-master elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-2745 elementor-page-709">
         {children}
