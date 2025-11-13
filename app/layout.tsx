@@ -3,7 +3,6 @@ import './globals.css'
 import '../styles/elementor.css'
 import '../styles/inline-styles.css'
 import '../styles/live-chat.css'
-import CSSLoader from '@/components/CSSLoader'
 import Scripts from '@/components/Scripts'
 
 export const metadata: Metadata = {
@@ -48,9 +47,32 @@ export default function RootLayout({
         <link rel="profile" href="https://gmpg.org/xfn/11" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <link rel="canonical" href="https://xyz.com/" />
+        
+        {/* Google Fonts */}
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Rubik:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Titillium+Web:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+        />
+        
+        {/* Elementor CSS Files - Load in parallel for better performance */}
+        <link rel="stylesheet" href="/css/wp-content/themes/hello-elementor/style.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/themes/hello-elementor/theme.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor/assets/css/frontend-lite.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/uploads/elementor/css/post-6.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/frontend-lite.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/uploads/elementor/css/post-2745.css" />
+        <link rel="stylesheet" href="/css/wp-content/uploads/elementor/css/post-703.css" />
+        <link rel="stylesheet" href="/css/wp-content/uploads/elementor/css/post-706.css" />
+        <link rel="stylesheet" href="/css/wp-includes/css/dashicons.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor/assets/css/widget-icon-box.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-carousel.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css" />
+        <link rel="stylesheet" href="/css/wp-content/plugins/elementor-pro/assets/css/widget-posts.min.css" />
       </head>
       <body className="home wp-singular page-template page-template-elementor_header_footer page page-id-2745 wp-custom-logo wp-theme-hello-elementor wp-child-theme-hello-theme-child-master elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-2745 elementor-page-709">
-        <CSSLoader />
         {children}
         <Scripts />
       </body>
