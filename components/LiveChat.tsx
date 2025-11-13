@@ -92,7 +92,7 @@ export default function LiveChat() {
         onClick={toggleChat}
       >
         <div
-          direction={isOpen ? 'left' : 'right'}
+          data-direction={isOpen ? 'left' : 'right'}
           className={`TwistFadeTransition__TransitionComponent-hXIVqG ${
             isOpen ? 'iRVkwX' : 'dJcSNz'
           }`}
