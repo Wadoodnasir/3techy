@@ -10,9 +10,6 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <a className="skip-link screen-reader-text" href="#content">
-        Skip to content
-      </a>
       <Header />
       <div
         data-elementor-type="wp-page"

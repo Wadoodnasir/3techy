@@ -2,11 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
+  const isAboutPage = pathname === "/about";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -220,7 +224,7 @@ export default function Header() {
           data-widget_type="theme-site-logo.default"
         >
           <div className="elementor-widget-container">
-            <a href="https://xyz.com" aria-label="Bee Techy Logo">
+            <Link href="/" aria-label="Bee Techy Logo">
               <Image
                 src="/images/Bee-Techy-Landscape-Color-Icon-White-Text-1.png"
                 alt="Bee Techy Logo"
@@ -229,7 +233,7 @@ export default function Header() {
                 priority
                 className="attachment-full size-full wp-image-4973"
               />
-            </a>
+            </Link>
           </div>
         </div>
         <div
@@ -250,10 +254,10 @@ export default function Header() {
               }`}
             >
               <ul id="menu-1-0b1d9f9" className="elementor-nav-menu">
-                <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018">
-                  <a href="https://xyz.com/about/" className="elementor-item">
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-1018 ${isAboutPage ? "current-menu-item" : ""}`}>
+                  <Link href="/about" className={`elementor-item ${isAboutPage ? "elementor-item-active" : ""}`}>
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-124">
                   <a href="#" className="elementor-item elementor-item-anchor">
@@ -421,10 +425,10 @@ export default function Header() {
               style={isMenuOpen ? {} : { display: 'none' }}
             >
               <ul id="menu-2-0b1d9f9" className="elementor-nav-menu">
-                <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018">
-                  <a href="https://xyz.com/about/" className="elementor-item">
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-1018 ${isAboutPage ? "current-menu-item" : ""}`}>
+                  <Link href="/about" className={`elementor-item ${isAboutPage ? "elementor-item-active" : ""}`}>
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-124">
                   <a href="#" className="elementor-item elementor-item-anchor">
