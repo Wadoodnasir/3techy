@@ -12,6 +12,7 @@ export default function Header() {
   const pathname = usePathname();
   const isAboutPage = pathname === "/about";
   const isProjectsPage = pathname === "/projects";
+  const isReviewsPage = pathname === "/reviews";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -354,10 +355,10 @@ export default function Header() {
                     Portfolio
                   </Link>
                 </li>
-                <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863">
-                  <a href="https://xyz.com/reviews/" className="elementor-item">
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-2863 ${isReviewsPage ? "current-menu-item" : ""}`}>
+                  <Link href="/reviews" className={`elementor-item ${isReviewsPage ? "elementor-item-active" : ""}`}>
                     Reviews
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-7717">
                   <a
@@ -525,10 +526,10 @@ export default function Header() {
                     Portfolio
                   </Link>
                 </li>
-                <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-2863">
-                  <a href="https://xyz.com/reviews/" className="elementor-item">
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-2863 ${isReviewsPage ? "current-menu-item" : ""}`}>
+                  <Link href="/reviews" className={`elementor-item ${isReviewsPage ? "elementor-item-active" : ""}`}>
                     Reviews
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-7717">
                   <a
