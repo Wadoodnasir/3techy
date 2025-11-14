@@ -13,6 +13,7 @@ export default function Header() {
   const isAboutPage = pathname === "/about";
   const isProjectsPage = pathname === "/projects";
   const isReviewsPage = pathname === "/reviews";
+  const isCareersPage = pathname === "/job-openings";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -360,13 +361,13 @@ export default function Header() {
                     Reviews
                   </Link>
                 </li>
-                <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-7717">
-                  <a
-                    href="https://xyz.com/job-openings/"
-                    className="elementor-item"
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 ${isCareersPage ? "current-menu-item" : ""}`}>
+                  <Link
+                    href="/job-openings"
+                    className={`elementor-item ${isCareersPage ? "elementor-item-active" : ""}`}
                   >
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-731">
                   <a href="https://xyz.com/contact/" className="elementor-item">
@@ -531,13 +532,13 @@ export default function Header() {
                     Reviews
                   </Link>
                 </li>
-                <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-7717">
-                  <a
-                    href="https://xyz.com/job-openings/"
-                    className="elementor-item"
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 ${isCareersPage ? "current-menu-item" : ""}`}>
+                  <Link
+                    href="/job-openings"
+                    className={`elementor-item ${isCareersPage ? "elementor-item-active" : ""}`}
                   >
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-731">
                   <a href="https://xyz.com/contact/" className="elementor-item">
@@ -553,9 +554,9 @@ export default function Header() {
                   </a>
                 </li>
               </ul>
-            </nav>
-          </div>
-        </div>
+                </nav>
+              </div>
+            </div>
         <div
           className="elementor-element elementor-element-ccb4655 elementor-position-left elementor-hidden-tablet elementor-hidden-mobile elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box"
           data-id="ccb4655"

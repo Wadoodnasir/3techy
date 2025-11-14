@@ -1,0 +1,574 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
+
+export default function Careers() {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+    
+    // Trigger lazy loading observer
+    const lazyloadRunObserver = () => {
+      const lazyloadBackgrounds = document.querySelectorAll(
+        `.e-con.e-parent:not(.e-lazyloaded):not(.e-no-lazyload)`
+      )
+
+      if (lazyloadBackgrounds.length === 0) return
+
+      const lazyloadBackgroundObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const lazyloadBackground = entry.target as HTMLElement
+              if (lazyloadBackground) {
+                lazyloadBackground.classList.add("e-lazyloaded")
+              }
+              lazyloadBackgroundObserver.unobserve(entry.target)
+            }
+          })
+        },
+        { rootMargin: "200px 0px 200px 0px" }
+      )
+
+      lazyloadBackgrounds.forEach((lazyloadBackground) => {
+        lazyloadBackgroundObserver.observe(lazyloadBackground)
+      })
+    }
+
+    // Run immediately and also after a small delay
+    lazyloadRunObserver()
+    setTimeout(lazyloadRunObserver, 100)
+
+    // Preload upwork badge image
+    const img = new Image()
+    img.src = "/images/upwork-badge.png"
+  }, [])
+
+  return (
+    <>
+      <Header />
+      <div
+        data-elementor-type="single-page"
+        data-elementor-id="709"
+        className="elementor elementor-709 elementor-location-single post-6274 page type-page status-publish hentry"
+        data-elementor-post-type="elementor_library"
+      >
+        {/* Page Title Section */}
+        <div
+          className="elementor-element elementor-element-724465f e-flex e-con-boxed e-con e-parent"
+          data-id="724465f"
+          data-element_type="container"
+          data-settings='{"background_background":"classic"}'
+        >
+          <div className="e-con-inner">
+            <div
+              className="elementor-element elementor-element-161676e elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
+              data-id="161676e"
+              data-element_type="widget"
+              data-widget_type="theme-post-title.default"
+            >
+              <div className="elementor-widget-container">
+                <style
+                  dangerouslySetInnerHTML={{
+                    __html: `
+                      /*! elementor - v3.23.0 - 05-08-2024 */
+                      .elementor-heading-title {
+                        padding: 0;
+                        margin: 0;
+                        line-height: 1;
+                      }
+                      .elementor-widget-heading .elementor-heading-title[class*="elementor-size-"] > a {
+                        color: inherit;
+                        font-size: inherit;
+                        line-height: inherit;
+                      }
+                      .elementor-widget-heading .elementor-heading-title.elementor-size-small {
+                        font-size: 15px;
+                      }
+                      .elementor-widget-heading .elementor-heading-title.elementor-size-medium {
+                        font-size: 19px;
+                      }
+                      .elementor-widget-heading .elementor-heading-title.elementor-size-large {
+                        font-size: 29px;
+                      }
+                      .elementor-widget-heading .elementor-heading-title.elementor-size-xl {
+                        font-size: 39px;
+                      }
+                      .elementor-widget-heading .elementor-heading-title.elementor-size-xxl {
+                        font-size: 59px;
+                      }
+                    `,
+                  }}
+                />
+                <h1 className="elementor-heading-title elementor-size-default">
+                  Job Openings
+                </h1>
+              </div>
+            </div>
+            <div
+              className="elementor-element elementor-element-29b444e elementor-widget__width-inherit elementor-absolute elementor-widget elementor-widget-html"
+              data-id="29b444e"
+              data-element_type="widget"
+              data-settings='{"_position":"absolute"}'
+              data-widget_type="html.default"
+            >
+              <div className="elementor-widget-container">
+                <div className="bg-shape-1 bg-piece"></div>
+                <div className="bg-shape-2 bg-piece"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content Section */}
+        <div
+          className="elementor-element elementor-element-1f37777 e-flex e-con-boxed e-con e-parent"
+          data-id="1f37777"
+          data-element_type="container"
+        >
+          <div className="e-con-inner">
+            <main
+              className="elementor-element elementor-element-a455184 e-con-full e-flex e-con e-child"
+              data-id="a455184"
+              data-element_type="container"
+            >
+              <div
+                className="elementor-element elementor-element-0b58a01 elementor-widget elementor-widget-theme-post-content"
+                data-id="0b58a01"
+                data-element_type="widget"
+                id="post-content"
+                data-widget_type="theme-post-content.default"
+              >
+                <div className="elementor-widget-container">
+                  <div
+                    data-elementor-type="wp-page"
+                    data-elementor-id="6274"
+                    className="elementor elementor-6274"
+                    data-elementor-post-type="page"
+                  >
+                    {/* Knack CRM Iframe Section - Only render on client to avoid hydration errors */}
+                    {isClient && (
+                      <div
+                        className="elementor-element elementor-element-720af3b e-flex e-con-boxed e-con e-parent"
+                        data-id="720af3b"
+                        data-element_type="container"
+                      >
+                        <div className="e-con-inner">
+                          <div
+                            className="elementor-element elementor-element-8b48f55 elementor-widget elementor-widget-html"
+                            data-id="8b48f55"
+                            data-element_type="widget"
+                            data-widget_type="html.default"
+                          >
+                            <div className="elementor-widget-container">
+                              <iframe
+                                height={1080}
+                                src="https://beetechy.knack.com/bee-techy-crm#public-job-openings/"
+                                style={{ width: "100%", border: "none" }}
+                                title="Job Openings"
+                                loading="lazy"
+                              ></iframe>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </main>
+
+            {/* Additional Sections After Main Content */}
+            <div
+              className="elementor-element elementor-element-9f5a2b2 e-con-full e-flex e-con e-child"
+              data-id="9f5a2b2"
+              data-element_type="container"
+            >
+              {/* Upwork Badge Section */}
+              <div
+                className="elementor-element elementor-element-130624d e-flex e-con-boxed e-con e-child"
+                data-id="130624d"
+                data-element_type="container"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div className="e-con-inner">
+                  <div
+                    className="elementor-element elementor-element-bef6566 elementor-widget elementor-widget-image"
+                    data-id="bef6566"
+                    data-element_type="widget"
+                    data-widget_type="image.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <style
+                        dangerouslySetInnerHTML={{
+                          __html: `
+                            /*! elementor - v3.23.0 - 05-08-2024 */
+                            .elementor-widget-image {
+                              text-align: center;
+                            }
+                            .elementor-widget-image a {
+                              display: inline-block;
+                            }
+                            .elementor-widget-image a img[src$=".svg"] {
+                              width: 48px;
+                            }
+                            .elementor-widget-image img {
+                              vertical-align: middle;
+                              display: inline-block;
+                            }
+                          `,
+                        }}
+                      />
+                      <a
+                        href="https://www.upwork.com/freelancers/eddymosk"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <img
+                          width={600}
+                          height={603}
+                          src="/images/upwork-badge.png"
+                          className="attachment-large size-large wp-image-4175"
+                          alt="Upwork Badge"
+                          loading="lazy"
+                          decoding="async"
+                          onLoad={(e) => {
+                            const img = e.target as HTMLImageElement
+                            img.style.display = ""
+                            img.style.visibility = ""
+                            img.style.opacity = ""
+                          }}
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* All Services Section */}
+              <div
+                className="elementor-element elementor-element-24472bb e-flex e-con-boxed e-con e-child"
+                data-id="24472bb"
+                data-element_type="container"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div className="e-con-inner">
+                  <div
+                    className="elementor-element elementor-element-9d1c7f2 elementor-widget elementor-widget-heading"
+                    data-id="9d1c7f2"
+                    data-element_type="widget"
+                    data-widget_type="heading.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <h4 className="elementor-heading-title elementor-size-default">
+                        All Services
+                      </h4>
+                    </div>
+                  </div>
+                  <div
+                    className="elementor-element elementor-element-19382b4 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu"
+                    data-id="19382b4"
+                    data-element_type="widget"
+                    data-settings='{"layout":"vertical","submenu_icon":{"value":"<svg class=\"e-font-icon-svg e-fas-caret-down\" viewBox=\"0 0 320 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\"></path></svg>","library":"fa-solid"}}'
+                    data-widget_type="nav-menu.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <nav className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-background e--animation-fade">
+                        <ul
+                          id="menu-1-19382b4"
+                          className="elementor-nav-menu sm-vertical"
+                        >
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-970">
+                            <a
+                              href="https://xyz.com/artificial-intelligence-development-automation/"
+                              className="elementor-item"
+                            >
+                              Artificial Intelligence Development & Automation
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-972">
+                            <a
+                              href="https://xyz.com/mobile-app-design-development/"
+                              className="elementor-item"
+                            >
+                              Mobile App Design & Development
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-973">
+                            <a
+                              href="https://xyz.com/saas-design-development/"
+                              className="elementor-item"
+                            >
+                              SaaS Design & Development
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-974">
+                            <a
+                              href="https://xyz.com/shopify-web-design-development/"
+                              className="elementor-item"
+                            >
+                              Shopify Web Design & Development
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-975">
+                            <a
+                              href="https://xyz.com/ux-ui-design/"
+                              className="elementor-item"
+                            >
+                              UX/UI Design
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1400">
+                            <a
+                              href="https://xyz.com/blockchain-web3-development/"
+                              className="elementor-item"
+                            >
+                              Blockchain & Web3 Development
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1401">
+                            <a
+                              href="https://xyz.com/ios-application-development-design/"
+                              className="elementor-item"
+                            >
+                              iOS Application Development & Design
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402">
+                            <a
+                              href="https://xyz.com/android-application-development-design/"
+                              className="elementor-item"
+                            >
+                              Android Application Development & Design
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1403">
+                            <a
+                              href="https://xyz.com/web-application-development/"
+                              className="elementor-item"
+                            >
+                              Web Application Development
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1404">
+                            <a
+                              href="https://xyz.com/progressive-web-app-pwa-development/"
+                              className="elementor-item"
+                            >
+                              Progressive Web App (PWA) Development
+                            </a>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1407">
+                            <a
+                              href="https://xyz.com/hubspot-web-design-development/"
+                              className="elementor-item"
+                            >
+                              Hubspot Web Design & Development
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ready to Get Started Section */}
+              <div
+                className="elementor-element elementor-element-2c31914 e-flex e-con-boxed e-con e-child"
+                data-id="2c31914"
+                data-element_type="container"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div className="e-con-inner">
+                  <div
+                    className="elementor-element elementor-element-5d85fcb elementor-widget elementor-widget-heading"
+                    data-id="5d85fcb"
+                    data-element_type="widget"
+                    data-widget_type="heading.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <h4 className="elementor-heading-title elementor-size-default">
+                        Ready to get started?
+                      </h4>
+                    </div>
+                  </div>
+                  <div
+                    className="elementor-element elementor-element-9ce67b4 elementor-widget elementor-widget-text-editor"
+                    data-id="9ce67b4"
+                    data-element_type="widget"
+                    data-widget_type="text-editor.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <style
+                        dangerouslySetInnerHTML={{
+                          __html: `
+                            /*! elementor - v3.23.0 - 05-08-2024 */
+                            .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+                              background-color: #69727d;
+                              color: #fff;
+                            }
+                            .elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap {
+                              color: #69727d;
+                              border: 3px solid;
+                              background-color: transparent;
+                            }
+                            .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap {
+                              margin-top: 8px;
+                            }
+                            .elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter {
+                              width: 1em;
+                              height: 1em;
+                            }
+                            .elementor-widget-text-editor .elementor-drop-cap {
+                              float: left;
+                              text-align: center;
+                              line-height: 1;
+                              font-size: 50px;
+                            }
+                            .elementor-widget-text-editor .elementor-drop-cap-letter {
+                              display: inline-block;
+                            }
+                          `,
+                        }}
+                      />
+                      <div className="text">
+                        Ready to discuss your idea or initiate the process? Feel
+                        free to email us, contact us, or call us, whichever you
+                        prefer.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="elementor-element elementor-element-5412a71 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box"
+                    data-id="5412a71"
+                    data-element_type="widget"
+                    data-widget_type="icon-box.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <div className="elementor-icon-box-wrapper">
+                        <div className="elementor-icon-box-icon">
+                          <a
+                            href="tel:+18186605609"
+                            className="elementor-icon elementor-animation-"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="e-font-icon-svg e-fas-phone-alt"
+                              viewBox="0 0 512 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                        <div className="elementor-icon-box-content">
+                          <div className="elementor-icon-box-title">
+                            <a href="tel:+18186605609"> (818)-660-5609 </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="elementor-element elementor-element-b23955f elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box"
+                    data-id="b23955f"
+                    data-element_type="widget"
+                    data-widget_type="icon-box.default"
+                  >
+                    <div className="elementor-widget-container">
+                      <div className="elementor-icon-box-wrapper">
+                        <div className="elementor-icon-box-icon">
+                          <a
+                            href="mailto:[email protected]"
+                            className="elementor-icon elementor-animation-"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="e-font-icon-svg e-far-envelope"
+                              viewBox="0 0 512 512"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                        <div className="elementor-icon-box-content">
+                          <div className="elementor-icon-box-title">
+                            <a href="mailto:[email protected]">
+                              [email protected]
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Section Before Footer */}
+      <div
+        className="elementor-element elementor-element-efe559d e-flex e-con-boxed e-con e-parent"
+        data-id="efe559d"
+        data-element_type="container"
+        data-settings='{"background_background":"gradient"}'
+      >
+        <div className="e-con-inner">
+          <div
+            className="elementor-element elementor-element-b46b5ae e-flex e-con-boxed e-con e-child"
+            data-id="b46b5ae"
+            data-element_type="container"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div className="e-con-inner">
+              <div
+                className="elementor-element elementor-element-285a5ce elementor-widget elementor-widget-heading"
+                data-id="285a5ce"
+                data-element_type="widget"
+                data-widget_type="heading.default"
+              >
+                <div className="elementor-widget-container">
+                  <h2 className="elementor-heading-title elementor-size-default">
+                    Whether You&apos;re Ready Or Want To Explore Possibilities,
+                    Let&apos;s Get In Touch.
+                  </h2>
+                </div>
+              </div>
+              <div
+                className="elementor-element elementor-element-9dd9060 elementor-widget elementor-widget-button"
+                data-id="9dd9060"
+                data-element_type="widget"
+                data-widget_type="button.default"
+              >
+                <div className="elementor-widget-container">
+                  <div className="elementor-button-wrapper">
+                    <a
+                      className="elementor-button elementor-button-link elementor-size-sm"
+                      href="https://xyz.com/get-quote/"
+                    >
+                      <span className="elementor-button-content-wrapper">
+                        <span className="elementor-button-text">
+                          Schedule Free Consultation
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  )
+}
+
