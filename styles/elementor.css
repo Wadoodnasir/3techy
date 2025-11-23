@@ -111,10 +111,6 @@
   transition: all 0.3s;
 }
 
-.elementor-icon-box-content {
-  padding-top: 20px;
-}
-
 .elementor-icon-box-title {
   margin: 0;
   padding: 0;
@@ -1385,11 +1381,11 @@ label[for="form-field-consultation-0"]:after {
 }
 
 /* Large screens - add left margin */
-@media (min-width: 1330px) {
+/* @media (min-width: 1330px) {
   .elementor-element.elementor-element-b46b5ae {
     margin-left: 50px !important;
   }
-}
+} */
 
 .elementor-element.elementor-element-b46b5ae::before {
   content: "" !important;

@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Los Angeles Custom Software Development | Web & UI UX Design Agency',
-  description: 'Bee Techy provides a variety of tech solutions and software development services to clients in the Los Angeles area and nationwide.',
+  title: 'Lahore Custom Software Development | Web & UI UX Design Agency',
+  description: '3Techy provides a variety of tech solutions and software development services to clients in Lahore, Pakistan and worldwide.',
   openGraph: {
-    title: 'Los Angeles Custom Software Development | Web & UI UX Design Agency',
-    description: 'Bee Techy provides a variety of tech solutions and software development services to clients in the Los Angeles area and nationwide.',
+    title: 'Lahore Custom Software Development | Web & UI UX Design Agency',
+    description: '3Techy provides a variety of tech solutions and software development services to clients in Lahore, Pakistan and worldwide.',
     url: 'https://xyz.com/about/',
-    siteName: 'Bee Techy, LLC.',
+    siteName: '3Techy',
     images: [
       {
         url: '/images/upload-b4d72503-b88e-4ebc-92a3-f0060ba51db2.gif',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@beetechyllc',
+    site: '@3techy',
   },
   alternates: {
     canonical: 'https://xyz.com/about/',

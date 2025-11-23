@@ -138,7 +138,7 @@ export default function TestimonialCarousel() {
                 <div className="elementor-testimonial">
                   <div className="elementor-testimonial__content">
                     <div className="elementor-testimonial__text">
-                      Our experience with Bee Techy was beyond exceptional.
+                      Our experience with 3Techy was beyond exceptional.
                       They understood our vision, refined it, and translated
                       it into a software solution that has significantly
                       streamlined our operational workflows. The team was
@@ -190,7 +190,7 @@ export default function TestimonialCarousel() {
                 <div className="elementor-testimonial">
                   <div className="elementor-testimonial__content">
                     <div className="elementor-testimonial__text">
-                      We tasked Bee Techy with developing a complex
+                      We tasked 3Techy with developing a complex
                       healthcare application within a tight timeframe. Not
                       only did they deliver on time, but the quality of the
                       software exceeded our expectations. The communication

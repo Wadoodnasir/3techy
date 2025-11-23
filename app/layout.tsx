@@ -6,13 +6,14 @@ import '../styles/live-chat.css'
 import Scripts from '@/components/Scripts'
 
 export const metadata: Metadata = {
-  title: 'Los Angeles Software Development | Mobile App Design & Development',
-  description: 'Bee Techy is a top software development agency that provides quality mobile app design and development services in the Los Angeles area.',
+  metadataBase: new URL('https://xyz.com'),
+  title: 'Lahore Software Development | Mobile App Design & Development',
+  description: '3Techy is a top software development agency that provides quality mobile app design and development services in Lahore, Pakistan.',
   openGraph: {
-    title: 'Los Angeles Software Development | Mobile App Design & Development',
-    description: 'Bee Techy is a top software development agency that provides quality mobile app design and development services in the Los Angeles area.',
+    title: 'Lahore Software Development | Mobile App Design & Development',
+    description: '3Techy is a top software development agency that provides quality mobile app design and development services in Lahore, Pakistan.',
     url: 'https://xyz.com/',
-    siteName: 'Bee Techy, LLC.',
+    siteName: '3Techy',
     images: [
       {
         url: '/images/upload-b4d72503-b88e-4ebc-92a3-f0060ba51db2.gif',
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@beetechyllc',
+    site: '@3techy',
   },
   icons: {
     icon: [
@@ -52,6 +53,10 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Rubik:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic|Titillium+Web:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&display=swap"
         />
         
         {/* Elementor CSS Files - Load in parallel for better performance */}

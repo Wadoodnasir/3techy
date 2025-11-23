@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import CTASection from "@/components/CTASection"
 
 export default function Reviews() {
   const [isClient, setIsClient] = useState(false)
@@ -659,7 +660,7 @@ export default function Reviews() {
                       <div className="elementor-icon-box-wrapper">
                         <div className="elementor-icon-box-icon">
                           <a
-                            href="tel:+18186605609"
+                            href="tel:03034498760"
                             className="elementor-icon elementor-animation-"
                           >
                             <svg
@@ -674,7 +675,7 @@ export default function Reviews() {
                         </div>
                         <div className="elementor-icon-box-content">
                           <div className="elementor-icon-box-title">
-                            <a href="tel:+18186605609"> (818)-660-5609 </a>
+                            <a href="tel:03034498760"> 03034498760 </a>
                           </div>
                         </div>
                       </div>
@@ -706,7 +707,7 @@ export default function Reviews() {
                         <div className="elementor-icon-box-content">
                           <div className="elementor-icon-box-title">
                             <a href="mailto:[email protected]">
-                              [email protected]
+                              3techy.offical@gmail.com
                             </a>
                           </div>
                         </div>
@@ -721,59 +722,7 @@ export default function Reviews() {
       </div>
 
       {/* CTA Section Before Footer */}
-      <div
-        className="elementor-element elementor-element-efe559d e-flex e-con-boxed e-con e-parent"
-        data-id="efe559d"
-        data-element_type="container"
-        data-settings='{"background_background":"gradient"}'
-      >
-        <div className="e-con-inner">
-          <div
-            className="elementor-element elementor-element-b46b5ae e-flex e-con-boxed e-con e-child"
-            data-id="b46b5ae"
-            data-element_type="container"
-            data-settings='{"background_background":"classic"}'
-          >
-            <div className="e-con-inner">
-              <div
-                className="elementor-element elementor-element-285a5ce elementor-widget elementor-widget-heading"
-                data-id="285a5ce"
-                data-element_type="widget"
-                data-widget_type="heading.default"
-              >
-                <div className="elementor-widget-container">
-                  <h2 className="elementor-heading-title elementor-size-default">
-                    Whether You&apos;re Ready Or Want To Explore Possibilities,
-                    Let&apos;s Get In Touch.
-                  </h2>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-9dd9060 elementor-widget elementor-widget-button"
-                data-id="9dd9060"
-                data-element_type="widget"
-                data-widget_type="button.default"
-              >
-                <div className="elementor-widget-container">
-                  <div className="elementor-button-wrapper">
-                    <a
-                      className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://xyz.com/get-quote/"
-                    >
-                      <span className="elementor-button-content-wrapper">
-                        <span className="elementor-button-text">
-                          Schedule Free Consultation
-                        </span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <CTASection isExternal={true} buttonUrl="https://xyz.com/get-quote/" />
       <Footer />
     </>
   )

@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import ReviewsLayoutClient from './layout-client'
 
 export const metadata: Metadata = {
-  title: 'Reviews » Bee Techy, LLC.',
-  description: 'Read client reviews and testimonials for Bee Techy, a top software development agency in Los Angeles.',
+  title: 'Reviews » 3Techy',
+  description: 'Read client reviews and testimonials for 3Techy, a top software development agency in Lahore, Pakistan.',
   openGraph: {
-    title: 'Reviews » Bee Techy, LLC.',
-    description: 'Read client reviews and testimonials for Bee Techy, a top software development agency in Los Angeles.',
+    title: 'Reviews » 3Techy',
+    description: 'Read client reviews and testimonials for 3Techy, a top software development agency in Lahore, Pakistan.',
     url: 'https://xyz.com/reviews/',
-    siteName: 'Bee Techy, LLC.',
+    siteName: '3Techy',
     images: [
       {
         url: '/images/Review1.png',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@beetechyllc',
+    site: '@3techy',
   },
   alternates: {
     canonical: 'https://xyz.com/reviews/',

@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import ProjectsLayoutClient from './layout-client'
 
 export const metadata: Metadata = {
-  title: 'Projects Archive » Bee Techy, LLC.',
+  title: 'Projects Archive » 3Techy',
   description: 'Browse our portfolio of custom software development projects, mobile apps, web applications, and UI/UX design work.',
   openGraph: {
-    title: 'Projects Archive » Bee Techy, LLC.',
+    title: 'Projects Archive » 3Techy',
     description: 'Browse our portfolio of custom software development projects, mobile apps, web applications, and UI/UX design work.',
     url: 'https://xyz.com/projects/',
-    siteName: 'Bee Techy, LLC.',
+    siteName: '3Techy',
     images: [
       {
         url: '/images/Bee-Techy-Email-Icon.png',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@beetechyllc',
+    site: '@3techy',
   },
   alternates: {
     canonical: 'https://xyz.com/projects/',

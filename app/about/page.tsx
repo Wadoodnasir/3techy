@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import CTASection from "@/components/CTASection";
 
 export default function About() {
   // Force images to load on client-side navigation
@@ -166,7 +166,13 @@ export default function About() {
                   <div className="elementor-widget-container">
                     <h2
                       className="elementor-heading-title elementor-size-default"
-                      style={{ fontSize: "2.5rem", lineHeight: "1.2" }}
+                      style={{
+                        fontFamily: '"Teko", Sans-serif',
+                        fontSize: "4.5rem",
+                        fontWeight: 400,
+                        textTransform: "uppercase",
+                        lineHeight: "1em",
+                      }}
                       data-responsive-heading="true"
                     >
                       JOURNEYING TOGETHER SINCE<br></br>
@@ -182,9 +188,9 @@ export default function About() {
                 >
                   <div className="elementor-widget-container">
                     <p>
-                      Bee Techy began as a dream shared by a group of tech
+                      3Techy began as a dream shared by a group of tech
                       enthusiasts. Over the years, we&apos;ve grown from a small
-                      team to a leading Los Angeles based custom software
+                      team to a leading Lahore based custom software
                       development and web and UI/UX design agency. Our journey
                       has been fueled by passion, innovation, and the undying
                       commitment to creating digital solutions that resonate.
@@ -202,8 +208,8 @@ export default function About() {
                       Our strength lies in our diverse and talented team. From
                       seasoned software developers to creative web designers,
                       each member brings a unique perspective and skill set to
-                      the table. Together, our custom software development team
-                      in Los Angeles collaborate, innovate, and create digital
+                      the table.                       Together, our custom software development team
+                      in Lahore collaborate, innovate, and create digital
                       masterpieces that stand out in a crowded digital
                       landscape.
                     </p>
@@ -267,11 +273,11 @@ export default function About() {
               >
                 <div className="elementor-widget-container">
                   <p>
-                    We pride ourselves on our versatile skill set. Whether
+                    We pride ourselves on our versatile skill set.                     Whether
                     it&apos;s developing a cutting-edge mobile app, designing an
                     intuitive website, or reimagining your brand&apos;s digital
-                    identity, our custom software development team in Los
-                    Angeles has the expertise to turn visions into reality. Our
+                    identity, our custom software development team in Lahore
+                    has the expertise to turn visions into reality. Our
                     team is a blend of software engineers, UI/UX designers, and
                     digital strategists, ensuring that every project gets the
                     multifaceted approach it deserves.
@@ -403,7 +409,7 @@ export default function About() {
                               "url(/images/Screen-Shot-2021-03-16-at-6.29.10-PM-794x1024.png)",
                           }}
                           role="img"
-                          aria-label="Los Angeles Custom Software Developer"
+                          aria-label="Lahore Custom Software Developer"
                         ></div>
                         <div className="elementor-cta__bg-overlay"></div>
                       </div>
@@ -753,58 +759,7 @@ export default function About() {
       </div>
 
       {/* CTA Section Before Footer */}
-      <div
-        className="elementor-element elementor-element-efe559d e-flex e-con-boxed e-con e-parent"
-        data-id="efe559d"
-        data-element_type="container"
-        data-settings='{"background_background":"gradient"}'
-      >
-        <div className="e-con-inner">
-          <div
-            className="elementor-element elementor-element-b46b5ae e-flex e-con-boxed e-con e-child"
-            data-id="b46b5ae"
-            data-element_type="container"
-            data-settings='{"background_background":"classic"}'
-          >
-            <div className="e-con-inner">
-              <div
-                className="elementor-element elementor-element-285a5ce elementor-widget elementor-widget-heading"
-                data-id="285a5ce"
-                data-element_type="widget"
-                data-widget_type="heading.default"
-              >
-                <div className="elementor-widget-container">
-                  <h2 className="elementor-heading-title elementor-size-default">
-                    Whether You&apos;re Ready Or Want To Explore Possibilities,
-                    Let&apos;s Get In Touch.
-                  </h2>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-9dd9060 elementor-widget elementor-widget-button"
-                data-id="9dd9060"
-                data-element_type="widget"
-                data-widget_type="button.default"
-              >
-                <div className="elementor-widget-container">
-                  <div className="elementor-button-wrapper">
-                    <a
-                      className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://xyz.com/get-quote/"
-                    >
-                      <span className="elementor-button-content-wrapper">
-                        <span className="elementor-button-text">
-                          Schedule Free Consultation
-                        </span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CTASection isExternal={true} buttonUrl="https://xyz.com/get-quote/" />
 
       <Footer />
     </>

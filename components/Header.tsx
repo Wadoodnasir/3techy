@@ -13,7 +13,7 @@ export default function Header() {
   const isAboutPage = pathname === "/about";
   const isProjectsPage = pathname === "/projects";
   const isReviewsPage = pathname === "/reviews";
-  const isCareersPage = pathname === "/job-openings";
+  const isJobOpeningsPage = pathname === "/job-openings";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -227,10 +227,10 @@ export default function Header() {
           data-widget_type="theme-site-logo.default"
         >
           <div className="elementor-widget-container">
-            <Link href="/" aria-label="Bee Techy Logo">
+            <Link href="/" aria-label="3Techy Logo">
               <Image
                 src="/images/Bee-Techy-Landscape-Color-Icon-White-Text-1.png"
-                alt="Bee Techy Logo"
+                alt="3Techy Logo"
                 width={534}
                 height={119}
                 priority
@@ -275,76 +275,76 @@ export default function Header() {
                   </a>
                   <ul className="sub-menu elementor-nav-menu--dropdown">
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-989">
-                      <a
-                        href="https://xyz.com/saas-design-development/"
+                      <Link
+                        href="/saas-design-development"
                         className="elementor-sub-item"
                       >
                         SaaS Design & Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-986">
-                      <a
-                        href="https://xyz.com/artificial-intelligence-development-automation/"
+                      <Link
+                        href="/artificial-intelligence-development-automation"
                         className="elementor-sub-item"
                       >
                         Artificial Intelligence Development & Automation
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-988">
-                      <a
-                        href="https://xyz.com/mobile-app-design-development/"
+                      <Link
+                        href="/mobile-app-design-development"
                         className="elementor-sub-item"
                       >
                         Mobile App Design & Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1393">
-                      <a
-                        href="https://xyz.com/ios-application-development-design/"
+                      <Link
+                        href="/ios-application-development-design"
                         className="elementor-sub-item"
                       >
                         iOS Application Development & Design
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1394">
-                      <a
-                        href="https://xyz.com/android-application-development-design/"
+                      <Link
+                        href="/android-application-development-design"
                         className="elementor-sub-item"
                       >
                         Android Application Development & Design
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1392">
-                      <a
-                        href="https://xyz.com/blockchain-web3-development/"
+                      <Link
+                        href="/blockchain-web3-development"
                         className="elementor-sub-item"
                       >
                         Blockchain & Web3 Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1395">
-                      <a
-                        href="https://xyz.com/web-application-development/"
+                      <Link
+                        href="/web-application-development"
                         className="elementor-sub-item"
                       >
                         Web Application Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1396">
-                      <a
-                        href="https://xyz.com/progressive-web-app-pwa-development/"
+                      <Link
+                        href="/progressive-web-app-pwa-development"
                         className="elementor-sub-item"
                       >
                         Progressive Web App (PWA) Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-990">
-                      <a
-                        href="https://xyz.com/ux-ui-design/"
+                      <Link
+                        href="/ux-ui-design"
                         className="elementor-sub-item"
                       >
                         UX/UI Design
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -361,26 +361,26 @@ export default function Header() {
                     Reviews
                   </Link>
                 </li>
-                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 ${isCareersPage ? "current-menu-item" : ""}`}>
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 ${isJobOpeningsPage ? "current-menu-item" : ""}`}>
                   <Link
                     href="/job-openings"
-                    className={`elementor-item ${isCareersPage ? "elementor-item-active" : ""}`}
+                    className={`elementor-item ${isJobOpeningsPage ? "elementor-item-active" : ""}`}
                   >
                     Careers
                   </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-731">
-                  <a href="https://xyz.com/contact/" className="elementor-item">
+                  <Link href="/get-quote?source=contact" className="elementor-item">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1747">
-                  <a
-                    href="https://xyz.com/get-quote/"
+                  <Link
+                    href="/get-quote"
                     className="elementor-item"
                   >
                     <b>Get A Quote</b>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -429,12 +429,12 @@ export default function Header() {
             >
               <ul id="menu-2-0b1d9f9" className="elementor-nav-menu">
                 <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-1018 ${isAboutPage ? "current-menu-item" : ""}`}>
-                  <Link href="/about" className={`elementor-item ${isAboutPage ? "elementor-item-active" : ""}`}>
+                  <Link href="/about" className={`elementor-item ${isAboutPage ? "elementor-item-active" : ""}`} tabIndex={isMenuOpen ? 0 : -1}>
                     About
                   </Link>
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-124">
-                  <a href="#" className="elementor-item elementor-item-anchor">
+                  <a href="#" className="elementor-item elementor-item-anchor" tabIndex={isMenuOpen ? 0 : -1}>
                     Services
                     <svg
                       className="dropdown-arrow"
@@ -446,76 +446,85 @@ export default function Header() {
                   </a>
                   <ul className="sub-menu elementor-nav-menu--dropdown">
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-989">
-                      <a
-                        href="https://xyz.com/saas-design-development/"
+                      <Link
+                        href="/saas-design-development"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         SaaS Design & Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-986">
-                      <a
-                        href="https://xyz.com/artificial-intelligence-development-automation/"
+                      <Link
+                        href="/artificial-intelligence-development-automation"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         Artificial Intelligence Development & Automation
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-988">
-                      <a
-                        href="https://xyz.com/mobile-app-design-development/"
+                      <Link
+                        href="/mobile-app-design-development"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         Mobile App Design & Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1393">
-                      <a
-                        href="https://xyz.com/ios-application-development-design/"
+                      <Link
+                        href="/ios-application-development-design"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         iOS Application Development & Design
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1394">
-                      <a
-                        href="https://xyz.com/android-application-development-design/"
+                      <Link
+                        href="/android-application-development-design"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         Android Application Development & Design
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1392">
-                      <a
-                        href="https://xyz.com/blockchain-web3-development/"
+                      <Link
+                        href="/blockchain-web3-development"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         Blockchain & Web3 Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1395">
-                      <a
-                        href="https://xyz.com/web-application-development/"
+                      <Link
+                        href="/web-application-development"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         Web Application Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1396">
-                      <a
-                        href="https://xyz.com/progressive-web-app-pwa-development/"
+                      <Link
+                        href="/progressive-web-app-pwa-development"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         Progressive Web App (PWA) Development
-                      </a>
+                      </Link>
                     </li>
                     <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-990">
-                      <a
-                        href="https://xyz.com/ux-ui-design/"
+                      <Link
+                        href="/ux-ui-design"
                         className="elementor-sub-item"
+                        tabIndex={isMenuOpen ? 0 : -1}
                       >
                         UX/UI Design
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
@@ -532,26 +541,27 @@ export default function Header() {
                     Reviews
                   </Link>
                 </li>
-                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 ${isCareersPage ? "current-menu-item" : ""}`}>
+                <li className={`menu-item menu-item-type-post_type menu-item-object-page menu-item-7717 ${isJobOpeningsPage ? "current-menu-item" : ""}`}>
                   <Link
                     href="/job-openings"
-                    className={`elementor-item ${isCareersPage ? "elementor-item-active" : ""}`}
+                    className={`elementor-item ${isJobOpeningsPage ? "elementor-item-active" : ""}`}
+                    tabIndex={isMenuOpen ? 0 : -1}
                   >
                     Careers
                   </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-731">
-                  <a href="https://xyz.com/contact/" className="elementor-item">
+                  <Link href="/get-quote?source=contact" className="elementor-item">
                     Contact Us
-                  </a>
+                  </Link>
                 </li>
                 <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1747">
-                  <a
-                    href="https://xyz.com/get-quote/"
+                  <Link
+                    href="/get-quote"
                     className="elementor-item"
                   >
                     <b>Get A Quote</b>
-                  </a>
+                  </Link>
                 </li>
               </ul>
                 </nav>
@@ -588,7 +598,7 @@ export default function Header() {
                   <span> Call Us Now </span>
                 </div>
                 <p className="elementor-icon-box-description">
-                  <a href="tel:+18186605609">(818) 660-5609</a>
+                  <a href="tel:+9230344998760">+92 303 44998760</a>
                 </p>
               </div>
             </div>

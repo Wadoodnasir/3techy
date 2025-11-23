@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CTASection from "@/components/CTASection";
-import { services } from "@/lib/services";
+import Link from "next/link";
+import { ServiceContent } from "@/lib/services";
 
-export default function JobOpenings() {
+interface ServicePageTemplateProps {
+  service: ServiceContent;
+}
+
+export default function ServicePageTemplate({ service }: ServicePageTemplateProps) {
   // Force images to load on client-side navigation
   useEffect(() => {
     // Trigger lazy loading observer for this page
@@ -38,20 +41,13 @@ export default function JobOpenings() {
       });
     };
 
-    // Run immediately and also after a small delay to ensure DOM is ready
     lazyloadRunObserver();
     setTimeout(lazyloadRunObserver, 100);
 
-    // Also trigger the elementor/lazyload/observe event
+    // Trigger the elementor/lazyload/observe event
     const event = new Event("elementor/lazyload/observe");
     document.dispatchEvent(event);
   }, []);
-
-  // Get all service slugs for the sidebar menu
-  const serviceSlugs = Object.values(services).map((service) => ({
-    title: service.title,
-    slug: service.slug,
-  }));
 
   return (
     <>
@@ -59,7 +55,7 @@ export default function JobOpenings() {
       <div
         data-elementor-type="single-page"
         data-elementor-id="709"
-        className="elementor elementor-709 elementor-location-single post-6274 page type-page status-publish hentry"
+        className="elementor elementor-709 elementor-location-single"
         data-elementor-post-type="elementor_library"
       >
         {/* Page Title Section */}
@@ -70,25 +66,14 @@ export default function JobOpenings() {
           data-settings='{"background_background":"classic"}'
         >
           <div className="e-con-inner">
-            <div
-              className="elementor-element elementor-element-161676e elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading"
-              data-id="161676e"
-              data-element_type="widget"
-              data-widget_type="theme-post-title.default"
-            >
+            <div className="elementor-element elementor-element-161676e elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading">
               <div className="elementor-widget-container">
                 <h1 className="elementor-heading-title elementor-size-default">
-                  Job Openings
+                  {service.title}
                 </h1>
               </div>
             </div>
-            <div
-              className="elementor-element elementor-element-29b444e elementor-widget__width-inherit elementor-absolute elementor-widget elementor-widget-html"
-              data-id="29b444e"
-              data-element_type="widget"
-              data-settings='{"_position":"absolute"}'
-              data-widget_type="html.default"
-            >
+            <div className="elementor-element elementor-element-29b444e elementor-widget__width-inherit elementor-absolute elementor-widget elementor-widget-html">
               <div className="elementor-widget-container">
                 <div className="bg-shape-1 bg-piece"></div>
                 <div className="bg-shape-2 bg-piece"></div>
@@ -104,11 +89,7 @@ export default function JobOpenings() {
           data-element_type="container"
         >
           <div className="e-con-inner">
-            <main
-              className="elementor-element elementor-element-a455184 e-con-full e-flex e-con e-child"
-              data-id="a455184"
-              data-element_type="container"
-            >
+            <main className="elementor-element elementor-element-a455184 e-con-full e-flex e-con e-child">
               <div
                 className="elementor-element elementor-element-0b58a01 elementor-widget elementor-widget-theme-post-content"
                 data-id="0b58a01"
@@ -117,66 +98,64 @@ export default function JobOpenings() {
                 data-widget_type="theme-post-content.default"
               >
                 <div className="elementor-widget-container">
-                  <div
-                    data-elementor-type="wp-page"
-                    data-elementor-id="6274"
-                    className="elementor elementor-6274"
-                    data-elementor-post-type="page"
-                  >
-                    <div
-                      className="elementor-element elementor-element-720af3b e-flex e-con-boxed e-con e-parent"
-                      data-id="720af3b"
-                      data-element_type="container"
-                    >
-                      <div className="e-con-inner">
-                        <div
-                          className="elementor-element elementor-element-8b48f55 elementor-widget elementor-widget-html"
-                          data-id="8b48f55"
-                          data-element_type="widget"
-                          data-widget_type="html.default"
-                        >
-                          <div className="elementor-widget-container">
-                            <iframe
-                              height="1080"
-                              src="https://beetechy.knack.com/bee-techy-crm#public-job-openings/"
-                              style={{
-                                width: "100%",
-                                border: "none",
-                                minHeight: "1080px",
-                              }}
-                              title="Job Openings"
-                              allowFullScreen
-                              loading="lazy"
-                            ></iframe>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <h2 className="wp-block-heading">{service.mainHeading}</h2>
+                  <p>{service.introParagraph}</p>
+
+                  <h2 className="wp-block-heading">{service.powerHeading}</h2>
+                  <p>{service.powerParagraph}</p>
+
+                  <h2 className="wp-block-heading">
+                    {service.servicesHeading}
+                  </h2>
+
+                  <h3 className="wp-block-heading">{service.service1Title}</h3>
+                  <ul className="wp-block-list">
+                    {service.service1Items.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+
+                  <h3 className="wp-block-heading">{service.service2Title}</h3>
+                  <ul className="wp-block-list">
+                    {service.service2Items.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+
+                  <h2 className="wp-block-heading">
+                    {service.whyChooseHeading}
+                  </h2>
+                  <ul className="wp-block-list">
+                    {service.whyChooseItems.map((item, index) => (
+                      <li key={index}>
+                        <strong>{item.split(":")[0]}:</strong>{" "}
+                        {item.split(":")[1]}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <h2 className="wp-block-heading">Conclusion:</h2>
+                  <p>
+                    {service.conclusionParagraph.includes("get in touch with us today!") ? (
+                      <>
+                        {service.conclusionParagraph.split("get in touch with us today!")[0]}
+                        <Link href="/contact">get in touch with us today!</Link>
+                        {service.conclusionParagraph.split("get in touch with us today!")[1] || ""}
+                      </>
+                    ) : (
+                      service.conclusionParagraph
+                    )}
+                  </p>
                 </div>
               </div>
             </main>
 
             {/* Sidebar Section */}
-            <div
-              className="elementor-element elementor-element-9f5a2b2 e-con-full e-flex e-con e-child"
-              data-id="9f5a2b2"
-              data-element_type="container"
-            >
+            <div className="elementor-element elementor-element-9f5a2b2 e-con-full e-flex e-con e-child">
               {/* Upwork Badge */}
-              <div
-                className="elementor-element elementor-element-130624d e-flex e-con-boxed e-con e-child"
-                data-id="130624d"
-                data-element_type="container"
-                data-settings='{"background_background":"classic"}'
-              >
+              <div className="elementor-element elementor-element-130624d e-flex e-con-boxed e-con e-child">
                 <div className="e-con-inner">
-                  <div
-                    className="elementor-element elementor-element-bef6566 elementor-widget elementor-widget-image"
-                    data-id="bef6566"
-                    data-element_type="widget"
-                    data-widget_type="image.default"
-                  >
+                  <div className="elementor-element elementor-element-bef6566 elementor-widget elementor-widget-image">
                     <div className="elementor-widget-container">
                       <a
                         href="https://www.upwork.com/freelancers/eddymosk"
@@ -184,15 +163,11 @@ export default function JobOpenings() {
                         rel="noopener noreferrer"
                       >
                         <img
-                          width={600}
-                          height={603}
+                          width="600"
+                          height="603"
                           src="/images/upwork-badge.png"
                           className="attachment-large size-large wp-image-4175"
                           alt="Upwork Badge"
-                          srcSet="/images/upwork-badge.png 600w, /images/upwork-badge-150x150.png 150w"
-                          sizes="(max-width: 600px) 100vw, 600px"
-                          loading="lazy"
-                          decoding="async"
                         />
                       </a>
                     </div>
@@ -201,51 +176,91 @@ export default function JobOpenings() {
               </div>
 
               {/* All Services Menu */}
-              <div
-                className="elementor-element elementor-element-24472bb e-flex e-con-boxed e-con e-child"
-                data-id="24472bb"
-                data-element_type="container"
-                data-settings='{"background_background":"classic"}'
-              >
+              <div className="elementor-element elementor-element-24472bb e-flex e-con-boxed e-con e-child">
                 <div className="e-con-inner">
-                  <div
-                    className="elementor-element elementor-element-9d1c7f2 elementor-widget elementor-widget-heading"
-                    data-id="9d1c7f2"
-                    data-element_type="widget"
-                    data-widget_type="heading.default"
-                  >
+                  <div className="elementor-element elementor-element-9d1c7f2 elementor-widget elementor-widget-heading">
                     <div className="elementor-widget-container">
                       <h4 className="elementor-heading-title elementor-size-default">
                         All Services
                       </h4>
                     </div>
                   </div>
-                  <div
-                    className="elementor-element elementor-element-19382b4 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu"
-                    data-id="19382b4"
-                    data-element_type="widget"
-                    data-settings='{"layout":"vertical","submenu_icon":{"value":"<svg class=\"e-font-icon-svg e-fas-caret-down\" viewBox=\"0 0 320 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\"></path></svg>","library":"fa-solid"}}'
-                    data-widget_type="nav-menu.default"
-                  >
+                  <div className="elementor-element elementor-element-19382b4 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu">
                     <div className="elementor-widget-container">
                       <nav className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-background e--animation-fade">
                         <ul
                           id="menu-1-19382b4"
                           className="elementor-nav-menu sm-vertical"
                         >
-                          {serviceSlugs.map((service) => (
-                            <li
-                              key={service.slug}
-                              className="menu-item menu-item-type-post_type menu-item-object-page"
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-970">
+                            <Link
+                              href="/artificial-intelligence-development-automation"
+                              className="elementor-item"
                             >
-                              <Link
-                                href={`/${service.slug}/`}
-                                className="elementor-item"
-                              >
-                                {service.title}
-                              </Link>
-                            </li>
-                          ))}
+                              Artificial Intelligence Development & Automation
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-972">
+                            <Link
+                              href="/mobile-app-design-development"
+                              className="elementor-item"
+                            >
+                              Mobile App Design & Development
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item current_page_item menu-item-973">
+                            <Link
+                              href={`/${service.slug}`}
+                              className="elementor-item elementor-item-active"
+                            >
+                              {service.title}
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1400">
+                            <Link
+                              href="/blockchain-web3-development"
+                              className="elementor-item"
+                            >
+                              Blockchain & Web3 Development
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1401">
+                            <Link
+                              href="/ios-application-development-design"
+                              className="elementor-item"
+                            >
+                              iOS Application Development & Design
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402">
+                            <Link
+                              href="/android-application-development-design"
+                              className="elementor-item"
+                            >
+                              Android Application Development & Design
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1403">
+                            <Link
+                              href="/web-application-development"
+                              className="elementor-item"
+                            >
+                              Web Application Development
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1404">
+                            <Link
+                              href="/progressive-web-app-pwa-development"
+                              className="elementor-item"
+                            >
+                              Progressive Web App (PWA) Development
+                            </Link>
+                          </li>
+                          <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-975">
+                            <Link href="/ux-ui-design" className="elementor-item">
+                              UX/UI Design
+                            </Link>
+                          </li>
                         </ul>
                       </nav>
                     </div>
@@ -253,32 +268,17 @@ export default function JobOpenings() {
                 </div>
               </div>
 
-              {/* Ready to get started Section */}
-              <div
-                className="elementor-element elementor-element-2c31914 e-flex e-con-boxed e-con e-child"
-                data-id="2c31914"
-                data-element_type="container"
-                data-settings='{"background_background":"classic"}'
-              >
+              {/* Contact Section */}
+              <div className="elementor-element elementor-element-2c31914 e-flex e-con-boxed e-con e-child">
                 <div className="e-con-inner">
-                  <div
-                    className="elementor-element elementor-element-5d85fcb elementor-widget elementor-widget-heading"
-                    data-id="5d85fcb"
-                    data-element_type="widget"
-                    data-widget_type="heading.default"
-                  >
+                  <div className="elementor-element elementor-element-5d85fcb elementor-widget elementor-widget-heading">
                     <div className="elementor-widget-container">
                       <h4 className="elementor-heading-title elementor-size-default">
                         Ready to get started?
                       </h4>
                     </div>
                   </div>
-                  <div
-                    className="elementor-element elementor-element-9ce67b4 elementor-widget elementor-widget-text-editor"
-                    data-id="9ce67b4"
-                    data-element_type="widget"
-                    data-widget_type="text-editor.default"
-                  >
+                  <div className="elementor-element elementor-element-9ce67b4 elementor-widget elementor-widget-text-editor">
                     <div className="elementor-widget-container">
                       <div className="text">
                         Ready to discuss your idea or initiate the process? Feel
@@ -287,19 +287,13 @@ export default function JobOpenings() {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="elementor-element elementor-element-5412a71 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box"
-                    data-id="5412a71"
-                    data-element_type="widget"
-                    data-widget_type="icon-box.default"
-                  >
+                  <div className="elementor-element elementor-element-5412a71 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box">
                     <div className="elementor-widget-container">
                       <div className="elementor-icon-box-wrapper">
                         <div className="elementor-icon-box-icon">
                           <a
                             href="tel:03034498760"
                             className="elementor-icon elementor-animation-"
-                            tabIndex={-1}
                           >
                             <svg
                               aria-hidden="true"
@@ -319,19 +313,13 @@ export default function JobOpenings() {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="elementor-element elementor-element-b23955f elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box"
-                    data-id="b23955f"
-                    data-element_type="widget"
-                    data-widget_type="icon-box.default"
-                  >
+                  <div className="elementor-element elementor-element-b23955f elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-widget elementor-widget-icon-box">
                     <div className="elementor-widget-container">
                       <div className="elementor-icon-box-wrapper">
                         <div className="elementor-icon-box-icon">
                           <a
                             href="mailto:[email protected]"
                             className="elementor-icon elementor-animation-"
-                            tabIndex={-1}
                           >
                             <svg
                               aria-hidden="true"
@@ -359,10 +347,6 @@ export default function JobOpenings() {
           </div>
         </div>
       </div>
-
-      {/* CTA Section Before Footer */}
-      <CTASection buttonUrl="/get-quote" />
-
       <Footer />
     </>
   );

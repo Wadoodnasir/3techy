@@ -119,7 +119,7 @@ export default function VideoSection() {
                 >
                   <Image
                     src="/images/Ted-X-Talk.webp"
-                    alt="Los Angeles Web Design & Development"
+                    alt="Lahore Web Design & Development"
                     width={1000}
                     height={700}
                     className="attachment-large size-large wp-image-512"

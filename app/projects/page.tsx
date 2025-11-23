@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CTASection from "@/components/CTASection";
+import { projects } from "@/lib/projects";
 
 export default function Projects() {
   // Force images to load on client-side navigation
@@ -65,160 +68,6 @@ export default function Projects() {
     const event = new Event("elementor/lazyload/observe");
     document.dispatchEvent(event);
   }, []);
-
-  // All 15 projects extracted from source with exact data (last row removed)
-  const projects = [
-    {
-      id: "8144",
-      title: "MSPTech.ai Website Relaunch Case Study",
-      image:
-        "/images/bee-techy-case-study-msptech-ai-chatbot-demo.jpg-768x576.png",
-      categories: ["UX/UI Design", "Web App Development", "Web Design"],
-      link: "https://xyz.com/project/msptech-ai-case-study-how-bee-techy-executed-a-2-month-rapid-website-relaunch-to-drive-beta-signups-for-an-ai-powered-msp-platform/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-8144 post-8144 project type-project status-publish has-post-thumbnail hentry category-ux-ui-design category-web-app-development category-web-design tag-css tag-figma tag-html tag-javascript tag-php industry-fintech",
-    },
-    {
-      id: "8065",
-      title: 'Talenver Case Study: How Bee Techy Engineered a "Super-App"',
-      image:
-        "/images/bee-techy-case-study-talenver-professional-networking-platform-ui.jpg-768x642.png",
-      categories: ["UX/UI Design", "Web App Development", "Web Design"],
-      link: "https://xyz.com/project/talenver-case-study-how-bee-techy-engineered-a-super-app-to-unify-networking-commerce-and-community-for-creative-professionals/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-8065 post-8065 project type-project status-publish has-post-thumbnail hentry category-ux-ui-design category-web-app-development category-web-design tag-css tag-figma tag-html tag-javascript tag-php industry-fintech",
-    },
-    {
-      id: "8095",
-      title: "Pigeon Post AI Powered Gifting Platform",
-      image: "/images/pigeon-post-ai-case-study-768x432.png",
-      categories: ["UX/UI Design", "Web App Development", "Web Design"],
-      link: "https://xyz.com/project/pigeon-post-ai-gifting-platform-case-study/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-8095 post-8095 project type-project status-publish has-post-thumbnail hentry category-ux-ui-design category-web-app-development category-web-design tag-css tag-figma tag-html tag-javascript tag-php industry-fintech",
-    },
-    {
-      id: "7985",
-      title: "FourMeasure Social Music Platform",
-      image: "/images/A-768x683.jpg",
-      categories: ["UX/UI Design", "Web App Development", "Web Design"],
-      link: "https://xyz.com/project/fourmeasure-music-app-case-study/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-7985 post-7985 project type-project status-publish has-post-thumbnail hentry category-ux-ui-design category-web-app-development category-web-design tag-css tag-figma tag-html tag-javascript tag-php industry-fintech",
-    },
-    {
-      id: "8007",
-      title: "Nduro AI Physical Endurance Fitness App",
-      image: "/images/nduro-ai-fitness-app-case-study-768x576.png",
-      categories: ["UX/UI Design", "Web App Development", "Web Design"],
-      link: "https://xyz.com/project/nduro-ai-fitness-app-case-study/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-8007 post-8007 project type-project status-publish has-post-thumbnail hentry category-ux-ui-design category-web-app-development category-web-design tag-css tag-figma tag-html tag-javascript tag-php industry-health-fitness",
-    },
-    {
-      id: "6870",
-      title:
-        "Rizzo Network Web Platform Revamp with Web3 Blockchain Integration",
-      image: "/images/01-2.png",
-      categories: ["UX/UI Design", "Web App Development", "Web Design"],
-      link: "https://xyz.com/project/rizzo-network-web-platform-revamp-with-web3-blockchain-integration/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6870 post-6870 project type-project status-publish has-post-thumbnail hentry category-ux-ui-design category-web-app-development category-web-design tag-css tag-figma tag-html tag-javascript tag-php industry-fintech",
-    },
-    {
-      id: "6859",
-      title: "Hey Caddie Golf Course Tracking and Scoring Mobile Application",
-      image: "/images/01-1.jpg",
-      categories: ["Mobile App Development", "UX/UI Design"],
-      link: "https://xyz.com/project/hey-caddie-golf-course-tracking-and-scoring-mobile-application/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6859 post-6859 project type-project status-publish has-post-thumbnail hentry category-mobile-app-development category-ux-ui-design industry-sports-recreation",
-    },
-    {
-      id: "6509",
-      title: "The Many Meeting Management Mobile Application",
-      image: "/images/1.jpg",
-      categories: ["Mobile App Development", "UX/UI Design"],
-      link: "https://xyz.com/project/the-many-meeting-management-mobile-application/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6509 post-6509 project type-project status-publish has-post-thumbnail hentry category-mobile-app-development category-ux-ui-design tag-css tag-figma tag-html tag-mobile-application tag-reactjs tag-ux-ui-design",
-    },
-    {
-      id: "6494",
-      title: "MAK Realty Group Zillow-like Real Estate Platform",
-      image: "/images/01.jpg",
-      categories: [
-        "Industries",
-        "Real Estate",
-        "Real Estate Technology",
-        "SaaS Development",
-        "UX/UI Design",
-        "Web App Development",
-      ],
-      link: "https://xyz.com/project/mak-realty-group-zillow-like-real-estate-platform/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6494 post-6494 project type-project status-publish has-post-thumbnail hentry category-industries category-real-estate category-real-estate-technology category-saas-development category-ux-ui-design category-web-app-development industry-real-estate",
-    },
-    {
-      id: "6479",
-      title: "Governance, Risk, and Compliance SaaS Platform",
-      image: "/images/Screenshot-2025-03-04-at-9.41.05-PM.png",
-      categories: ["SaaS Development", "Web App Development"],
-      link: "https://xyz.com/project/governance-risk-and-compliance-saas-platform/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6479 post-6479 project type-project status-publish has-post-thumbnail hentry category-saas-development category-web-app-development",
-    },
-    {
-      id: "6462",
-      title: "YouWaggle Collaborative Wishlist Social Mobile Application",
-      image: "/images/1.jpg",
-      categories: ["Mobile App Development"],
-      link: "https://xyz.com/project/youwaggle-collaborative-wishlist-social-mobile-application/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6462 post-6462 project type-project status-publish has-post-thumbnail hentry category-mobile-app-development tag-figma tag-mobile-application tag-reactjs tag-ux-ui-design",
-    },
-    {
-      id: "6401",
-      title: "Dorrus Hotel Booking and Rewards Platform",
-      image: "/images/1-1.png",
-      categories: ["SaaS Development", "Web App Development"],
-      link: "https://xyz.com/project/dorrus-hotel-booking-and-rewards-platform/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6401 post-6401 project type-project status-publish has-post-thumbnail hentry category-saas-development category-web-app-development tag-mysql tag-node-js tag-react tag-sabre tag-travel",
-    },
-    {
-      id: "6360",
-      title: "TravelPal AI Powered Trip Planner",
-      image: "/images/1.png",
-      categories: ["SaaS Development"],
-      link: "https://xyz.com/project/travelpal-ai-powered-trip-planning-tool/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6360 post-6360 project type-project status-publish has-post-thumbnail hentry category-saas-development",
-    },
-    {
-      id: "6063",
-      title: "CutThroat Fantasy Football Platform",
-      image: "/images/1-jul.png",
-      categories: [
-        "Game Development",
-        "SaaS Development",
-        "Web App Development",
-      ],
-      link: "https://xyz.com/project/cutthroat-fantasy-football-platform/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6063 post-6063 project type-project status-publish has-post-thumbnail hentry category-game-development category-saas-development category-web-app-development tag-css tag-figma tag-html tag-javascript tag-reactjs tag-ux-ui-design industry-sports-recreation",
-    },
-    {
-      id: "6049",
-      title:
-        "San Diego Community Power Government Solar Program Enterprise Portal",
-      image: "/images/01.jpg",
-      categories: ["CRM Development", "Web App Development"],
-      link: "https://xyz.com/project/san-diego-community-power-government-solar-program-enterprise-portal/",
-      classes:
-        "elementor elementor-1237 e-loop-item e-loop-item-6049 post-6049 project type-project status-publish has-post-thumbnail hentry category-crm-development category-web-app-development tag-css tag-figma tag-html tag-javascript tag-reactjs industry-energy-utilities",
-    },
-  ];
 
   return (
     <>
@@ -548,7 +397,7 @@ export default function Projects() {
                           data-elementor-post-type="elementor_library"
                           data-custom-edit-handle="1"
                         >
-                          <a
+                          <Link
                             className="elementor-element elementor-element-ef9ae63 project-container e-flex e-con-boxed e-con e-parent"
                             data-id="ef9ae63"
                             data-element_type="container"
@@ -642,7 +491,7 @@ export default function Projects() {
                                 </div>
                               </div>
                             </div>
-                          </a>
+                          </Link>
                         </div>
                       ))}
                       <span className="e-load-more-spinner">
@@ -672,58 +521,7 @@ export default function Projects() {
       </div>
 
       {/* CTA Section Before Footer */}
-      <div
-        className="elementor-element elementor-element-efe559d e-flex e-con-boxed e-con e-parent"
-        data-id="efe559d"
-        data-element_type="container"
-        data-settings='{"background_background":"gradient"}'
-      >
-        <div className="e-con-inner">
-          <div
-            className="elementor-element elementor-element-b46b5ae e-flex e-con-boxed e-con e-child"
-            data-id="b46b5ae"
-            data-element_type="container"
-            data-settings='{"background_background":"classic"}'
-          >
-            <div className="e-con-inner">
-              <div
-                className="elementor-element elementor-element-285a5ce elementor-widget elementor-widget-heading"
-                data-id="285a5ce"
-                data-element_type="widget"
-                data-widget_type="heading.default"
-              >
-                <div className="elementor-widget-container">
-                  <h2 className="elementor-heading-title elementor-size-default">
-                    Whether You&apos;re Ready Or Want To Explore Possibilities,
-                    Let&apos;s Get In Touch.
-                  </h2>
-                </div>
-              </div>
-              <div
-                className="elementor-element elementor-element-9dd9060 elementor-widget elementor-widget-button"
-                data-id="9dd9060"
-                data-element_type="widget"
-                data-widget_type="button.default"
-              >
-                <div className="elementor-widget-container">
-                  <div className="elementor-button-wrapper">
-                    <a
-                      className="elementor-button elementor-button-link elementor-size-sm"
-                      href="https://xyz.com/get-quote/"
-                    >
-                      <span className="elementor-button-content-wrapper">
-                        <span className="elementor-button-text">
-                          Schedule Free Consultation
-                        </span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <CTASection isExternal={true} buttonUrl="https://xyz.com/get-quote/" />
       <Footer />
     </>
   );
