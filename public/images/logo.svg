@@ -1,0 +1,55 @@
+<svg width="550" height="180" viewBox="0 0 550 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for hexagon - #ffaa16 shades -->
+    <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffaa16;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffb840;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffaa16;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Much larger hexagon with #ffaa16 background -->
+  <polygon 
+    points="90,20 140,20 160,65 140,110 90,110 70,65" 
+    fill="#ffaa16" 
+    stroke="#ff9500" 
+    stroke-width="8"
+    stroke-linejoin="round"
+  />
+  
+  <!-- Main large white "3" - perfectly centered in hexagon, much bigger -->
+  <text 
+    x="115" 
+    y="70" 
+    font-family="Arial, Helvetica, sans-serif" 
+    font-size="68" 
+    font-weight="900" 
+    fill="white"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    style="font-stretch: condensed;"
+  >3</text>
+  
+  <!-- Company name "3techy" in white, much larger -->
+  <text 
+    x="180" 
+    y="65" 
+    font-family="Arial, Helvetica, sans-serif" 
+    font-size="68" 
+    font-weight="bold" 
+    fill="white"
+    letter-spacing="-0.5"
+    margin-bottom="10"
+  >3techy</text>
+  
+  <!-- Tagline "Software Solutions" in white, larger -->
+  <text 
+    x="180" 
+    y="105" 
+    font-family="Arial, Helvetica, sans-serif" 
+    font-size="32" 
+    font-weight="400" 
+    fill="white"
+    letter-spacing="0.5"
+  >Software Solutions</text>
+</svg>
