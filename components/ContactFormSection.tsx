@@ -194,7 +194,7 @@ export default function ContactFormSection({
                 <span className="elementor-grid-item">
                   <a
                     className="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-523c705"
-                    href="https://www.instagram.com/beetechy/"
+                    href="https://www.instagram.com/3techyoffical/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

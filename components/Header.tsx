@@ -175,6 +175,8 @@ export default function Header() {
 
   // Handle submenu toggles in mobile dropdown
   useEffect(() => {
+    if (!isMenuOpen) return;
+
     const handleSubmenuToggle = (e: Event) => {
       const target = e.target as HTMLElement;
       const menuItem = target.closest('.menu-item-has-children');
@@ -185,18 +187,26 @@ export default function Header() {
       if (!dropdownMenu) return;
 
       e.preventDefault();
+      e.stopPropagation();
       menuItem.classList.toggle('submenu-open');
     };
 
     // Add click listeners to all submenu parent links in dropdown
-    const submenuParents = document.querySelectorAll(
-      '.elementor-nav-menu--dropdown .menu-item-has-children > a'
-    );
-    submenuParents.forEach((link) => {
-      link.addEventListener('click', handleSubmenuToggle);
-    });
+    // Use setTimeout to ensure DOM is ready
+    const timer = setTimeout(() => {
+      const submenuParents = document.querySelectorAll(
+        '.elementor-nav-menu--dropdown .menu-item-has-children > a'
+      );
+      submenuParents.forEach((link) => {
+        link.addEventListener('click', handleSubmenuToggle);
+      });
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
+      const submenuParents = document.querySelectorAll(
+        '.elementor-nav-menu--dropdown .menu-item-has-children > a'
+      );
       submenuParents.forEach((link) => {
         link.removeEventListener('click', handleSubmenuToggle);
       });
@@ -434,7 +444,19 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-124">
-                  <a href="#" className="elementor-item elementor-item-anchor" tabIndex={isMenuOpen ? 0 : -1}>
+                  <a 
+                    href="#" 
+                    className="elementor-item elementor-item-anchor" 
+                    tabIndex={isMenuOpen ? 0 : -1}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      const menuItem = e.currentTarget.closest('.menu-item-has-children');
+                      if (menuItem) {
+                        menuItem.classList.toggle('submenu-open');
+                      }
+                    }}
+                  >
                     Services
                     <svg
                       className="dropdown-arrow"
